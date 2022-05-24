@@ -60,9 +60,9 @@ export default {
       let npmPackages = new Function(`return ${this.text}`.replace('\n', ''))()
       npmPackages = npmPackages.map(pluginInfo => ({
         ...pluginInfo,
-        // src: `https://cdn.jsdelivr.net/npm/${pluginInfo}/dist/${pluginInfo.name}.umd.js`
+        // src: `https://www.unpkg.com/${pluginInfo}/dist/${pluginInfo.name}.umd.js`
         // src: `https://unpkg.com/${pluginInfo}/dist/${pluginName}.umd.js`
-        src: `https://cdn.jsdelivr.net/npm/${pluginInfo.package}@${pluginInfo.version}/dist/${pluginInfo.name}.umd.js`
+        src: `https://www.unpkg.com/${pluginInfo.package}@${pluginInfo.version}/dist/${pluginInfo.name}.umd.js`
       }))
 
       const queue = new createjs.LoadQueue()
